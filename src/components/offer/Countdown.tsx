@@ -27,12 +27,12 @@ export function Countdown({ className }: { className?: string }) {
   const state = useOfferDeadline();
 
   return (
-    <div className={cn("rounded-3xl border border-white/10 bg-ink/70 p-5 backdrop-blur sm:p-7", className)}>
+    <div className={cn("rounded-3xl border border-ink/10 bg-surface/70 p-5 backdrop-blur sm:p-7", className)}>
       <div className="mb-4 flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
-        <p className="flex items-center gap-2 text-sm text-white/55">
+        <p className="flex items-center gap-2 text-sm text-ink/65">
           <LiveDot /> Adesioni aperte fino al
         </p>
-        <p className="font-display text-base font-bold text-white sm:text-lg">
+        <p className="font-display text-base font-bold text-ink sm:text-lg">
           {state ? state.label : " "}
         </p>
       </div>
@@ -40,24 +40,24 @@ export function Countdown({ className }: { className?: string }) {
         {UNITS.map((u) => {
           const value = state ? state.remaining[u.key] : 0;
           return (
-            <div key={u.key} className="rounded-2xl border border-white/[0.07] bg-white/[0.03] px-1 py-3 text-center">
+            <div key={u.key} className="rounded-2xl border border-ink/[0.08] bg-ink/[0.04] px-1 py-3 text-center">
               <div className="relative h-8 overflow-hidden sm:h-10">
                 <motion.p
                   key={value}
                   initial={{ y: "-100%", opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.35, ease: EASE }}
-                  className="font-display text-[28px] font-extrabold leading-8 tabular-nums text-white sm:text-4xl sm:leading-10"
+                  className="font-display text-[28px] font-extrabold leading-8 tabular-nums text-ink sm:text-4xl sm:leading-10"
                 >
                   {String(value).padStart(2, "0")}
                 </motion.p>
               </div>
-              <p className="mt-1 text-[9px] uppercase tracking-wider text-white/35 sm:text-[10px]">{u.label}</p>
+              <p className="mt-1 text-[9px] uppercase tracking-wider text-ink/50 sm:text-[10px]">{u.label}</p>
             </div>
           );
         })}
       </div>
-      <p className="mt-3 text-[11px] leading-relaxed text-white/35">
+      <p className="mt-3 text-[11px] leading-relaxed text-ink/50">
         Le adesioni vengono raccolte a turni di 10 giorni.
       </p>
     </div>
@@ -73,7 +73,7 @@ export function CountdownInline({ className, prefix = "Scade tra" }: { className
       <LiveDot />
       <span>
         {prefix}{" "}
-        <strong className="font-semibold text-white">
+        <strong className="font-semibold text-ink">
           {r ? `${r.days}g ${String(r.hours).padStart(2, "0")}h ${String(r.minutes).padStart(2, "0")}m` : "—"}
         </strong>
       </span>

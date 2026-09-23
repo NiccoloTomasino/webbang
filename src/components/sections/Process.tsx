@@ -47,10 +47,10 @@ export function Process() {
             as="h2"
             text={"Il nostro metodo,\npasso dopo passo."}
             highlight={["metodo,"]}
-            className="font-display text-[2.1rem] font-extrabold leading-[1.04] tracking-[-0.03em] text-white min-[400px]:text-4xl sm:text-6xl"
+            className="font-display text-[2.1rem] font-extrabold leading-[1.04] tracking-[-0.03em] text-ink min-[400px]:text-4xl sm:text-6xl"
           />
           <Reveal delay={0.2}>
-            <p className="mt-5 text-base text-white/55 sm:mt-6 sm:text-lg">
+            <p className="mt-5 text-base text-ink/65 sm:mt-6 sm:text-lg">
               Un processo collaudato per portare il tuo progetto dall&apos;idea alla realtà, con trasparenza totale in
               ogni fase.
             </p>
@@ -59,7 +59,7 @@ export function Process() {
 
         <div ref={ref} className="relative mx-auto max-w-5xl">
           {/* linea verticale */}
-          <div className="absolute bottom-0 left-5 top-0 w-px bg-white/10 md:left-1/2" aria-hidden />
+          <div className="absolute bottom-0 left-5 top-0 w-px bg-ink/[0.07] md:left-1/2" aria-hidden />
           <motion.div
             aria-hidden
             className="absolute left-5 top-0 w-px bg-gradient-to-b from-bang via-bang to-bang/0 md:left-1/2"
@@ -73,9 +73,9 @@ export function Process() {
                 <li key={s.title} className="relative grid md:grid-cols-2 md:gap-16">
                   {/* nodo */}
                   <motion.span
-                    className="absolute left-5 top-6 z-10 grid h-10 w-10 -translate-x-1/2 md:h-12 md:w-12 place-items-center rounded-full border border-white/15 bg-ink font-display text-sm font-bold text-white md:left-1/2"
+                    className="absolute left-5 top-6 z-10 grid h-10 w-10 -translate-x-1/2 md:h-12 md:w-12 place-items-center rounded-full border border-ink/12 bg-paper font-display text-sm font-bold text-ink md:left-1/2"
                     initial={{ scale: 0.6, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1, backgroundColor: "#FFD60A", color: "#050505", borderColor: "#FFD60A" }}
+                    whileInView={{ scale: 1, opacity: 1, backgroundColor: "#FFD60A", color: "#0b0b0d", borderColor: "#FFD60A" }}
                     viewport={{ once: true, margin: "0px 0px -35% 0px" }}
                     transition={{ duration: 0.4 }}
                   >
@@ -88,25 +88,25 @@ export function Process() {
                   >
                     <div
                       className={cn(
-                        "group relative overflow-hidden rounded-3xl border border-white/[0.07] bg-ink-2 p-5 transition-colors duration-500 hover:border-bang/30 sm:p-7",
+                        "group relative overflow-hidden rounded-3xl border border-ink/[0.08] bg-surface p-5 transition-colors duration-500 hover:border-bang/30 sm:p-7",
                       )}
                     >
                       <span
                         aria-hidden
                         className={cn(
-                          "pointer-events-none absolute -top-6 font-display text-[7rem] font-extrabold leading-none text-white/[0.03] transition-colors duration-500 group-hover:text-bang/[0.08]",
+                          "pointer-events-none absolute -top-6 font-display text-[7rem] font-extrabold leading-none text-ink/[0.03] transition-colors duration-500 group-hover:text-bang/[0.08]",
                           right ? "-right-2" : "-right-2 md:right-auto md:-left-2",
                         )}
                       >
                         0{i + 1}
                       </span>
-                      <span className="relative inline-flex rounded-full bg-bang/10 px-3 py-1 font-mono text-[11px] font-medium text-bang">
+                      <span className="relative inline-flex rounded-full bg-bang/10 px-3 py-1 font-mono text-[11px] font-medium text-bang-ink">
                         {s.time}
                       </span>
-                      <h3 className="relative mt-3 font-display text-xl font-bold tracking-tight text-white sm:mt-4 sm:text-3xl">
+                      <h3 className="relative mt-3 font-display text-xl font-bold tracking-tight text-ink sm:mt-4 sm:text-3xl">
                         {s.title}
                       </h3>
-                      <p className="relative mt-2.5 text-[15px] leading-relaxed text-white/50 sm:mt-3 sm:text-base">{s.text}</p>
+                      <p className="relative mt-2.5 text-[15px] leading-relaxed text-ink/60 sm:mt-3 sm:text-base">{s.text}</p>
                     </div>
                   </Reveal>
                 </li>

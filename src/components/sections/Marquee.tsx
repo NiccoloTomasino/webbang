@@ -25,12 +25,12 @@ export function Marquee() {
           ))}
         </div>
       </motion.div>
-      <motion.div style={{ rotate: rotate2 }} className="-mx-10 -mt-3 border-y border-white/10 bg-ink-2 py-4">
+      <motion.div style={{ rotate: rotate2 }} className="-mx-10 -mt-3 border-y border-ink/10 bg-surface py-4">
         <div className="flex w-max animate-marquee-reverse">
           {[...ROW_B, ...ROW_B, ...ROW_B, ...ROW_B].map((t, i) => (
             <span key={i} className="flex items-center gap-6 px-6 font-display text-2xl font-bold uppercase tracking-tight text-stroke sm:text-4xl">
               {t}
-              <span className="text-bang">✦</span>
+              <span className="text-bang-ink">✦</span>
             </span>
           ))}
         </div>

@@ -54,7 +54,7 @@ export function Navbar() {
           className={cn(
             "mx-auto mt-2 flex max-w-7xl items-center justify-between rounded-full py-2 pl-3 pr-2 transition-all duration-500 sm:mt-3 sm:py-2.5 sm:pl-5 sm:pr-3",
             scrolled || menuOpen
-              ? "mx-2 border border-white/[0.08] bg-ink/75 backdrop-blur-xl sm:mx-6 xl:mx-auto"
+              ? "mx-2 border border-ink/[0.09] bg-surface/75 backdrop-blur-xl sm:mx-6 xl:mx-auto"
               : "mx-2 border border-transparent sm:mx-6 xl:mx-auto",
           )}
         >
@@ -67,13 +67,13 @@ export function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className="group relative rounded-full px-4 py-2 text-sm font-medium text-white/65 transition-colors hover:text-white"
+                className="group relative rounded-full px-4 py-2 text-sm font-medium text-ink/70 transition-colors hover:text-ink"
               >
                 <span className="relative block overflow-hidden">
                   <span className="block transition-transform duration-300 group-hover:-translate-y-full">
                     {l.label}
                   </span>
-                  <span className="absolute inset-0 translate-y-full text-bang transition-transform duration-300 group-hover:translate-y-0">
+                  <span className="absolute inset-0 translate-y-full text-bang-ink transition-transform duration-300 group-hover:translate-y-0">
                     {l.label}
                   </span>
                 </span>
@@ -84,7 +84,7 @@ export function Navbar() {
           <div className="flex items-center gap-1.5 sm:gap-2">
             <Link
               href={OFFER_PATH}
-              className="inline-flex h-10 items-center rounded-full bg-bang px-4 text-sm font-bold text-ink transition hover:bg-white sm:h-11 sm:px-5"
+              className="inline-flex h-10 items-center rounded-full bg-bang px-4 text-sm font-bold text-ink transition hover:bg-bang-deep sm:h-11 sm:px-5"
             >
               <span className="sm:hidden">−{offer.discount}%</span>
               <span className="hidden sm:inline">Richiedi −{offer.discount}%</span>
@@ -94,17 +94,17 @@ export function Navbar() {
               onClick={() => (menuOpen ? closeMenu() : setMenuOpen(true))}
               aria-label={menuOpen ? "Chiudi menu" : "Apri menu"}
               aria-expanded={menuOpen}
-              className="relative grid h-10 w-10 place-items-center rounded-full border border-white/10 sm:h-11 sm:w-11 lg:hidden"
+              className="relative grid h-10 w-10 place-items-center rounded-full border border-ink/10 sm:h-11 sm:w-11 lg:hidden"
             >
               <span
                 className={cn(
-                  "absolute h-0.5 w-5 rounded bg-white transition-all duration-300",
+                  "absolute h-0.5 w-5 rounded bg-ink transition-all duration-300",
                   menuOpen ? "rotate-45" : "-translate-y-1.5",
                 )}
               />
               <span
                 className={cn(
-                  "absolute h-0.5 w-5 rounded bg-white transition-all duration-300",
+                  "absolute h-0.5 w-5 rounded bg-ink transition-all duration-300",
                   menuOpen ? "-rotate-45" : "translate-y-1.5",
                 )}
               />
@@ -122,7 +122,7 @@ export function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className="fixed inset-0 z-40 flex flex-col overflow-y-auto bg-ink px-5 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-24 lg:hidden"
+            className="fixed inset-0 z-40 flex flex-col overflow-y-auto bg-paper px-5 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-24 lg:hidden"
             initial={{ clipPath: "circle(0% at 100% 0%)" }}
             animate={{ clipPath: "circle(150% at 100% 0%)" }}
             exit={{ clipPath: "circle(0% at 100% 0%)" }}
@@ -138,9 +138,9 @@ export function Navbar() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.15 + i * 0.06 }}
-                  className="flex items-baseline gap-4 border-b border-white/[0.06] py-4 font-display text-[2rem] font-bold leading-tight text-white active:text-bang"
+                  className="flex items-baseline gap-4 border-b border-ink/[0.08] py-4 font-display text-[2rem] font-bold leading-tight text-ink active:text-bang-ink"
                 >
-                  <span className="font-mono text-xs text-bang">0{i + 1}</span>
+                  <span className="font-mono text-xs text-bang-ink">0{i + 1}</span>
                   {l.label}
                 </motion.a>
               ))}
@@ -151,7 +151,7 @@ export function Navbar() {
               transition={{ delay: 0.5 }}
               className="relative mt-auto pt-8"
             >
-              <div className="mb-3 flex justify-center text-sm text-white/55">
+              <div className="mb-3 flex justify-center text-sm text-ink/65">
                 <CountdownInline prefix="Adesioni aperte ancora per" />
               </div>
               <Link

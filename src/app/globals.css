@@ -1,13 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #050505;
-  --color-ink-2: #0b0b0b;
-  --color-ink-3: #121212;
-  --color-ink-4: #1a1a1a;
+  /* Inchiostro: testo e superfici scure di contrasto (footer, blocchi accento) */
+  --color-ink: #0b0b0d;
+  --color-ink-2: #15151a;
+  --color-ink-3: #20202a;
+  --color-ink-4: #2c2c38;
+
+  /* Carta: sfondo chiaro del sito */
+  --color-paper: #f5f5f7;
+  --color-paper-2: #ebebef;
+  --color-surface: #ffffff;
+
   --color-bang: #ffd60a;
   --color-bang-light: #ffe45e;
   --color-bang-deep: #f5b400;
+  /* Giallo scurito: usato quando il giallo fa da TESTO su sfondo chiaro */
+  --color-bang-ink: #8a6200;
 
   --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -30,12 +39,12 @@
 
 @layer base {
   html {
-    background: var(--color-ink);
-    color-scheme: dark;
+    background: var(--color-paper);
+    color-scheme: light;
   }
   body {
-    background: var(--color-ink);
-    color: #f5f5f4;
+    background: var(--color-paper);
+    color: var(--color-ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     overflow-x: clip;
@@ -49,8 +58,8 @@
     outline-offset: 3px;
   }
   select option {
-    background: #111;
-    color: #fff;
+    background: #fff;
+    color: var(--color-ink);
   }
 }
 
@@ -77,12 +86,12 @@ html.lenis body {
   }
   .bg-grid {
     background-image:
-      linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+      linear-gradient(to right, rgb(11 11 13 / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(11 11 13 / 0.05) 1px, transparent 1px);
     background-size: 64px 64px;
   }
   .bg-dots {
-    background-image: radial-gradient(rgb(255 255 255 / 0.12) 1px, transparent 1px);
+    background-image: radial-gradient(rgb(11 11 13 / 0.14) 1px, transparent 1px);
     background-size: 22px 22px;
   }
   .mask-radial {
@@ -92,7 +101,7 @@ html.lenis body {
     mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
   }
   .text-stroke {
-    -webkit-text-stroke: 1.5px rgb(255 255 255 / 0.25);
+    -webkit-text-stroke: 1.5px rgb(11 11 13 / 0.22);
     color: transparent;
   }
   .text-stroke-bang {
@@ -108,9 +117,30 @@ html.lenis body {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
   .glass {
-    background: linear-gradient(180deg, rgb(255 255 255 / 0.06), rgb(255 255 255 / 0.02));
-    border: 1px solid rgb(255 255 255 / 0.08);
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.9), rgb(255 255 255 / 0.65));
+    border: 1px solid rgb(11 11 13 / 0.08);
     backdrop-filter: blur(14px);
+  }
+  /* Ombre morbide: sul chiaro sostituiscono i bordi luminosi del tema scuro */
+  .shadow-card {
+    box-shadow: 0 1px 2px rgb(11 11 13 / 0.04), 0 8px 24px -12px rgb(11 11 13 / 0.12);
+  }
+  .shadow-card-lg {
+    box-shadow: 0 2px 4px rgb(11 11 13 / 0.04), 0 24px 60px -24px rgb(11 11 13 / 0.18);
+  }
+  /* Evidenziatore giallo: sul chiaro i titoli restano scuri e il giallo passa dietro */
+  .mark-bang {
+    --mark-offset: 0em; /* alza la barra quando il testo ha spazio extra sotto */
+    background-image: linear-gradient(var(--color-bang), var(--color-bang));
+    background-size: 100% 0.3em;
+    background-position: 0 calc(100% - var(--mark-offset));
+    background-repeat: no-repeat;
+    padding-inline: 0.06em;
+  }
+
+  /* Blocco scuro di contrasto (footer, fasce accento) */
+  .on-dark {
+    color-scheme: dark;
   }
 }
 

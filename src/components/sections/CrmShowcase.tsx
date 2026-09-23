@@ -87,13 +87,13 @@ export function CrmShowcase() {
             as="h2"
             text={"Tutta la tua azienda.\nSotto controllo. In un click."}
             highlight={["controllo"]}
-            className="font-display text-[2.1rem] font-extrabold leading-[1.04] tracking-[-0.03em] text-white min-[400px]:text-4xl sm:text-6xl lg:text-7xl"
+            className="font-display text-[2.1rem] font-extrabold leading-[1.04] tracking-[-0.03em] text-ink min-[400px]:text-4xl sm:text-6xl lg:text-7xl"
           />
           <Reveal delay={0.25}>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/55 sm:mt-7 sm:text-lg">
-              Creiamo CRM e web app che <span className="text-white">semplificano i processi</span>,{" "}
-              <span className="text-white">automatizzano i controlli</span> e rendono la tua azienda{" "}
-              <span className="text-bang">più efficiente</span>. Software costruito intorno a come lavori tu.
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-ink/65 sm:mt-7 sm:text-lg">
+              Creiamo CRM e web app che <span className="text-ink">semplificano i processi</span>,{" "}
+              <span className="text-ink">automatizzano i controlli</span> e rendono la tua azienda{" "}
+              <span className="text-bang-ink">più efficiente</span>. Software costruito intorno a come lavori tu.
             </p>
           </Reveal>
         </div>
@@ -111,17 +111,17 @@ export function CrmShowcase() {
                     <span
                       className={cn(
                         "grid h-12 w-12 place-items-center rounded-2xl transition-colors duration-500",
-                        active === i ? "bg-bang text-ink" : "bg-white/[0.05] text-white/50",
+                        active === i ? "bg-bang text-ink" : "bg-ink/[0.05] text-ink/60",
                       )}
                     >
                       <f.icon className="h-5 w-5" />
                     </span>
-                    <span className="font-mono text-sm text-white/30">0{i + 1} / 0{FEATURES.length}</span>
+                    <span className="font-mono text-sm text-ink/45">0{i + 1} / 0{FEATURES.length}</span>
                   </div>
-                  <h3 className="font-display text-3xl font-bold leading-tight tracking-tight text-white xl:text-4xl">
+                  <h3 className="font-display text-3xl font-bold leading-tight tracking-tight text-ink xl:text-4xl">
                     {f.title}
                   </h3>
-                  <p className="mt-4 max-w-md text-lg leading-relaxed text-white/55">{f.text}</p>
+                  <p className="mt-4 max-w-md text-lg leading-relaxed text-ink/65">{f.text}</p>
                 </motion.div>
               </div>
             ))}
@@ -158,10 +158,10 @@ export function CrmShowcase() {
                   <span className="grid h-11 w-11 place-items-center rounded-2xl bg-bang text-ink">
                     <f.icon className="h-5 w-5" />
                   </span>
-                  <span className="font-mono text-xs text-white/30">0{i + 1} / 0{FEATURES.length}</span>
+                  <span className="font-mono text-xs text-ink/45">0{i + 1} / 0{FEATURES.length}</span>
                 </div>
-                <h3 className="font-display text-2xl font-bold tracking-tight text-white sm:text-3xl">{f.title}</h3>
-                <p className="mb-6 mt-3 leading-relaxed text-white/55">{f.text}</p>
+                <h3 className="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">{f.title}</h3>
+                <p className="mb-6 mt-3 leading-relaxed text-ink/65">{f.text}</p>
                 <div className="h-[440px] sm:h-[460px]">
                   <AppWindow url={f.url} progress={i}>
                     <P />
@@ -175,7 +175,7 @@ export function CrmShowcase() {
         <BeforeAfter />
 
         <Reveal className="mt-14 flex flex-col items-center gap-4 text-center">
-          <p className="text-white/55">Anche i CRM e le web app rientrano nell&apos;iniziativa sconto 60%.</p>
+          <p className="text-ink/65">Anche i CRM e le web app rientrano nell&apos;iniziativa sconto 60%.</p>
           <LinkButton href={OFFER_PATH}>Voglio semplificare la mia azienda</LinkButton>
         </Reveal>
       </div>
@@ -188,23 +188,23 @@ export function CrmShowcase() {
 function AppWindow({ children, url, progress }: { children: ReactNode; url: string; progress: number }) {
   const nav = [Gauge, Users, Workflow, ShieldCheck, BarChart3];
   return (
-    <div className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-2 shadow-[0_40px_100px_-30px_rgba(0,0,0,1)]">
-      <div className="flex items-center gap-2 border-b border-white/[0.06] px-4 py-3">
-        <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-        <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
+    <div className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-ink/10 bg-surface shadow-[0_40px_100px_-35px_rgba(11,11,13,0.35)]">
+      <div className="flex items-center gap-2 border-b border-ink/[0.08] px-4 py-3">
+        <span className="h-2.5 w-2.5 rounded-full bg-ink/12" />
+        <span className="h-2.5 w-2.5 rounded-full bg-ink/12" />
         <span className="h-2.5 w-2.5 rounded-full bg-bang/80" />
-        <span className="ml-2 min-w-0 flex-1 truncate rounded-md bg-white/[0.04] px-3 py-1 font-mono text-[10px] text-white/40 sm:ml-3 sm:text-[11px]">
-          gestionale.tuaazienda.it/<span className="text-bang">{url}</span>
+        <span className="ml-2 min-w-0 flex-1 truncate rounded-md bg-ink/[0.05] px-3 py-1 font-mono text-[10px] text-ink/55 sm:ml-3 sm:text-[11px]">
+          gestionale.tuaazienda.it/<span className="text-bang-ink">{url}</span>
         </span>
       </div>
       <div className="grid min-h-0 flex-1 grid-cols-1 sm:grid-cols-[56px_1fr]">
-        <div className="hidden flex-col items-center gap-2.5 border-r border-white/[0.06] py-4 sm:flex">
+        <div className="hidden flex-col items-center gap-2.5 border-r border-ink/[0.08] py-4 sm:flex">
           {nav.map((Icon, i) => (
             <span
               key={i}
               className={cn(
                 "grid h-9 w-9 place-items-center rounded-xl transition-colors duration-500",
-                i === progress + 1 ? "bg-bang text-ink" : "text-white/30",
+                i === progress + 1 ? "bg-bang text-ink" : "text-ink/45",
               )}
             >
               <Icon className="h-4 w-4" />
@@ -221,8 +221,8 @@ function PanelTitle({ title, sub, right }: { title: string; sub: string; right?:
   return (
     <div className="mb-3 flex items-center justify-between gap-3 sm:mb-4">
       <div className="min-w-0">
-        <p className="font-display text-base font-bold leading-tight text-white sm:text-lg">{title}</p>
-        <p className="mt-0.5 text-[11px] leading-snug text-white/40 sm:text-xs">{sub}</p>
+        <p className="font-display text-base font-bold leading-tight text-ink sm:text-lg">{title}</p>
+        <p className="mt-0.5 text-[11px] leading-snug text-ink/55 sm:text-xs">{sub}</p>
       </div>
       {right}
     </div>
@@ -233,7 +233,7 @@ function PanelTitle({ title, sub, right }: { title: string; sub: string; right?:
 
 function PipelinePanel() {
   const cols = [
-    { name: "Nuovi lead", color: "bg-white/40", items: [["Bianchi S.p.A.", "4.500 €"], ["Studio Verdi", "2.200 €"], ["Gallo Impianti", "7.800 €"]] },
+    { name: "Nuovi lead", color: "bg-ink/25", items: [["Bianchi S.p.A.", "4.500 €"], ["Studio Verdi", "2.200 €"], ["Gallo Impianti", "7.800 €"]] },
     { name: "Preventivo", color: "bg-sky-400", items: [["Hotel Aurora", "12.000 €"], ["Ferri & Co.", "3.400 €"]] },
     { name: "Trattativa", color: "bg-orange-400", items: [["Autoriparazioni Sole", "5.900 €"]] },
     { name: "Vinti", color: "bg-bang", items: [["Pasticceria Neri", "3.100 €"], ["Logistica Po", "18.500 €"]] },
@@ -247,10 +247,10 @@ function PipelinePanel() {
       />
       <div className="grid min-h-0 flex-1 grid-cols-2 gap-2.5 sm:grid-cols-4">
         {cols.map((c, ci) => (
-          <div key={c.name} className={cn("rounded-2xl bg-white/[0.025] p-2.5", ci > 1 && "max-sm:hidden")}>
+          <div key={c.name} className={cn("rounded-2xl bg-ink/[0.035] p-2.5", ci > 1 && "max-sm:hidden")}>
             <div className="mb-2.5 flex items-center gap-1.5">
               <span className={cn("h-1.5 w-1.5 rounded-full", c.color)} />
-              <p className="truncate text-[11px] font-semibold text-white/60">{c.name}</p>
+              <p className="truncate text-[11px] font-semibold text-ink/70">{c.name}</p>
             </div>
             <div className="space-y-2">
               {c.items.map(([n, v], i) => (
@@ -261,14 +261,14 @@ function PipelinePanel() {
                   transition={{ delay: 0.15 + ci * 0.1 + i * 0.07, ease: EASE }}
                   className={cn(
                     "rounded-xl border p-2.5",
-                    ci === 3 ? "border-bang/40 bg-bang/10" : "border-white/[0.06] bg-ink-3",
+                    ci === 3 ? "border-bang/40 bg-bang/10" : "border-ink/[0.08] bg-paper-2",
                   )}
                 >
-                  <p className="truncate text-[11px] font-semibold text-white">{n}</p>
-                  <p className={cn("mt-0.5 text-[10px]", ci === 3 ? "text-bang" : "text-white/40")}>{v}</p>
+                  <p className="truncate text-[11px] font-semibold text-ink">{n}</p>
+                  <p className={cn("mt-0.5 text-[10px]", ci === 3 ? "text-bang-ink" : "text-ink/55")}>{v}</p>
                   <div className="mt-2 flex -space-x-1.5">
                     {[0, 1].slice(0, (i % 2) + 1).map((a) => (
-                      <span key={a} className="h-4 w-4 rounded-full border border-ink-3 bg-gradient-to-br from-white/40 to-white/10" />
+                      <span key={a} className="h-4 w-4 rounded-full border border-ink/10 bg-gradient-to-br from-ink/25 to-ink/8" />
                     ))}
                   </div>
                 </motion.div>
@@ -294,13 +294,13 @@ function AutomationPanel() {
         title="Flusso: gestione ordini"
         sub="Eseguito 1.284 volte questo mese"
         right={
-          <span className="flex items-center gap-1.5 rounded-full bg-emerald-400/10 px-3 py-1 text-[11px] font-semibold text-emerald-300">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-300" /> Attivo
+          <span className="flex items-center gap-1.5 rounded-full bg-emerald-500/12 px-3 py-1 text-[11px] font-semibold text-emerald-700">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" /> Attivo
           </span>
         }
       />
       <div className="relative flex-1">
-        <div className="absolute bottom-6 left-[20px] top-6 w-px bg-white/10 sm:left-[22px]" aria-hidden />
+        <div className="absolute bottom-6 left-[20px] top-6 w-px bg-ink/[0.07] sm:left-[22px]" aria-hidden />
         <motion.div
           aria-hidden
           className="absolute left-[20px] top-6 w-px origin-top bg-bang sm:left-[22px]"
@@ -319,23 +319,23 @@ function AutomationPanel() {
             >
               <motion.span
                 className="relative z-10 grid h-10 w-10 shrink-0 place-items-center rounded-xl border sm:h-11 sm:w-11"
-                initial={{ backgroundColor: "#121212", borderColor: "rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.5)" }}
-                animate={{ backgroundColor: "#FFD60A", borderColor: "#FFD60A", color: "#050505" }}
+                initial={{ backgroundColor: "#ffffff", borderColor: "rgba(11,11,13,0.12)", color: "rgba(11,11,13,0.55)" }}
+                animate={{ backgroundColor: "#FFD60A", borderColor: "#FFD60A", color: "#0b0b0d" }}
                 transition={{ delay: 0.45 + i * 0.35, duration: 0.3 }}
               >
                 <s.icon className="h-4 w-4" />
               </motion.span>
-              <div className="flex min-w-0 flex-1 items-center justify-between gap-2 rounded-xl border border-white/[0.06] bg-white/[0.03] px-3 py-2 sm:px-3.5 sm:py-2.5">
+              <div className="flex min-w-0 flex-1 items-center justify-between gap-2 rounded-xl border border-ink/[0.08] bg-ink/[0.04] px-3 py-2 sm:px-3.5 sm:py-2.5">
                 <div className="min-w-0">
-                  <p className="truncate text-xs font-semibold text-white">{s.label}</p>
-                  <p className="truncate text-[10px] text-white/40">{s.sub}</p>
+                  <p className="truncate text-xs font-semibold text-ink">{s.label}</p>
+                  <p className="truncate text-[10px] text-ink/55">{s.sub}</p>
                 </div>
                 <motion.span
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.6 + i * 0.35, type: "spring", stiffness: 400 }}
                 >
-                  <CheckCircle2 className="h-4 w-4 text-bang" />
+                  <CheckCircle2 className="h-4 w-4 text-bang-ink" />
                 </motion.span>
               </div>
             </motion.div>
@@ -345,7 +345,7 @@ function AutomationPanel() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.9 }}
-          className="mt-3 flex items-center gap-2 rounded-xl bg-bang/10 px-3 py-2 text-[11px] leading-snug text-bang sm:mt-4 sm:px-3.5 sm:py-2.5"
+          className="mt-3 flex items-center gap-2 rounded-xl bg-bang/10 px-3 py-2 text-[11px] leading-snug text-bang-ink sm:mt-4 sm:px-3.5 sm:py-2.5"
         >
           <Sparkles className="h-3.5 w-3.5 shrink-0" /> 42 ore di lavoro manuale risparmiate questo mese
         </motion.div>
@@ -363,10 +363,10 @@ function ControlsPanel() {
     { label: "Approvazione ordine > 5.000 €", owner: "Direzione", status: "wait" },
   ] as const;
   const badge = {
-    ok: { t: "Completato", c: "bg-emerald-400/10 text-emerald-300", i: Check },
-    warn: { t: "Tra 5 giorni", c: "bg-bang/15 text-bang", i: Clock },
-    late: { t: "Scaduto", c: "bg-red-500/15 text-red-300", i: AlertTriangle },
-    wait: { t: "Da approvare", c: "bg-sky-400/10 text-sky-300", i: Layers },
+    ok: { t: "Completato", c: "bg-emerald-500/12 text-emerald-700", i: Check },
+    warn: { t: "Tra 5 giorni", c: "bg-bang/15 text-bang-ink", i: Clock },
+    late: { t: "Scaduto", c: "bg-red-500/12 text-red-700", i: AlertTriangle },
+    wait: { t: "Da approvare", c: "bg-sky-500/12 text-sky-700", i: Layers },
   };
   return (
     <div className="flex h-full flex-col">
@@ -376,13 +376,13 @@ function ControlsPanel() {
         right={
           <div className="relative h-11 w-11">
             <svg viewBox="0 0 36 36" className="h-11 w-11 -rotate-90">
-              <circle cx="18" cy="18" r="15" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="4" />
+              <circle cx="18" cy="18" r="15" fill="none" stroke="rgba(11,11,13,0.1)" strokeWidth="4" />
               <motion.circle
                 cx="18" cy="18" r="15" fill="none" stroke="#FFD60A" strokeWidth="4" strokeLinecap="round"
                 initial={{ pathLength: 0 }} animate={{ pathLength: 0.92 }} transition={{ duration: 1.2, ease: EASE }}
               />
             </svg>
-            <span className="absolute inset-0 grid place-items-center text-[10px] font-bold text-white">92%</span>
+            <span className="absolute inset-0 grid place-items-center text-[10px] font-bold text-ink">92%</span>
           </div>
         }
       />
@@ -397,12 +397,12 @@ function ControlsPanel() {
               transition={{ delay: 0.1 + i * 0.08, ease: EASE }}
               className={cn(
                 "flex items-center gap-2 rounded-xl border px-3 py-2 sm:gap-3 sm:py-2.5",
-                r.status === "late" ? "border-red-500/30 bg-red-500/[0.06]" : "border-white/[0.06] bg-white/[0.025]",
+                r.status === "late" ? "border-red-500/30 bg-red-500/[0.06]" : "border-ink/[0.08] bg-ink/[0.035]",
               )}
             >
               <div className="min-w-0 flex-1">
-                <p className="truncate text-xs font-semibold text-white">{r.label}</p>
-                <p className="text-[10px] text-white/40">{r.owner}</p>
+                <p className="truncate text-xs font-semibold text-ink">{r.label}</p>
+                <p className="text-[10px] text-ink/55">{r.owner}</p>
               </div>
               <span className={cn("flex shrink-0 items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-semibold", b.c)}>
                 <b.i className="h-3 w-3" /> {b.t}
@@ -415,7 +415,7 @@ function ControlsPanel() {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.8 }}
-        className="mt-3 flex items-center gap-2 rounded-xl border border-bang/30 bg-ink-3 px-3.5 py-2.5 text-[11px] text-white/70"
+        className="mt-3 flex items-center gap-2 rounded-xl border border-bang/30 bg-paper-2 px-3.5 py-2.5 text-[11px] text-ink/75"
       >
         <span className="relative flex h-2 w-2">
           <span className="absolute inset-0 animate-ping rounded-full bg-bang" />
@@ -444,26 +444,26 @@ function ReportPanel() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 + i * 0.08 }}
-            className={cn("rounded-xl p-3", i === 0 ? "bg-bang text-ink" : "border border-white/[0.06] bg-white/[0.03]")}
+            className={cn("rounded-xl p-3", i === 0 ? "bg-bang text-ink" : "border border-ink/[0.08] bg-ink/[0.04]")}
           >
-            <p className={cn("text-[10px]", i === 0 ? "text-ink/60" : "text-white/40")}>{k.l}</p>
-            <p className={cn("font-display text-base font-bold sm:text-lg", i === 0 ? "text-ink" : "text-white")}>{k.v}</p>
-            <p className={cn("text-[10px] font-semibold", i === 0 ? "text-ink/70" : "text-bang")}>{k.d}</p>
+            <p className={cn("text-[10px]", i === 0 ? "text-ink/60" : "text-ink/55")}>{k.l}</p>
+            <p className={cn("font-display text-base font-bold sm:text-lg", i === 0 ? "text-ink" : "text-ink")}>{k.v}</p>
+            <p className={cn("text-[10px] font-semibold", i === 0 ? "text-ink/70" : "text-bang-ink")}>{k.d}</p>
           </motion.div>
         ))}
       </div>
-      <div className="flex min-h-0 flex-1 flex-col rounded-2xl border border-white/[0.06] bg-white/[0.02] p-3">
-        <p className="mb-2 text-[11px] font-semibold text-white/60">Fatturato mensile</p>
+      <div className="flex min-h-0 flex-1 flex-col rounded-2xl border border-ink/[0.08] bg-ink/[0.03] p-3">
+        <p className="mb-2 text-[11px] font-semibold text-ink/70">Fatturato mensile</p>
         <div className="flex min-h-0 flex-1 items-end gap-1.5">
           {bars.map((h, i) => (
             <div key={i} className="flex h-full flex-1 flex-col items-center justify-end gap-1">
               <motion.div
-                className={cn("w-full rounded-t-md", i === bars.length - 1 ? "bg-bang" : "bg-white/15")}
+                className={cn("w-full rounded-t-md", i === bars.length - 1 ? "bg-bang" : "bg-ink/12")}
                 initial={{ height: 0 }}
                 animate={{ height: `${h}%` }}
                 transition={{ delay: 0.2 + i * 0.04, duration: 0.8, ease: EASE }}
               />
-              <span className="font-mono text-[9px] text-white/30">{months[i]}</span>
+              <span className="font-mono text-[9px] text-ink/45">{months[i]}</span>
             </div>
           ))}
         </div>
@@ -489,13 +489,13 @@ function BeforeAfter() {
   ];
   return (
     <div className="mt-24 grid gap-4 md:grid-cols-2 lg:mt-32">
-      <Reveal className="rounded-3xl border border-white/[0.07] bg-ink-2 p-7 sm:p-9">
-        <p className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-white/35">Prima</p>
+      <Reveal className="rounded-3xl border border-ink/[0.08] bg-surface p-7 sm:p-9">
+        <p className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-ink/50">Prima</p>
         <ul className="space-y-4">
           {before.map((t) => (
-            <li key={t} className="flex items-center gap-3 text-white/45 line-through decoration-white/20">
-              <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-white/[0.05]">
-                <X className="h-3.5 w-3.5 text-white/40" />
+            <li key={t} className="flex items-center gap-3 text-ink/55 line-through decoration-ink/20">
+              <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-ink/[0.05]">
+                <X className="h-3.5 w-3.5 text-ink/55" />
               </span>
               {t}
             </li>
@@ -515,8 +515,8 @@ function BeforeAfter() {
               transition={{ delay: 0.3 + i * 0.1 }}
               className="flex items-center gap-3 font-semibold"
             >
-              <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-ink">
-                <Check className="h-3.5 w-3.5 text-bang" strokeWidth={3} />
+              <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-paper">
+                <Check className="h-3.5 w-3.5 text-bang-ink" strokeWidth={3} />
               </span>
               {t}
             </motion.li>

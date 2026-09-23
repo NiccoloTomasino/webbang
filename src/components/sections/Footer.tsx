@@ -57,20 +57,20 @@ function SocialIcon({ name }: { name: "instagram" | "linkedin" | "facebook" }) {
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="relative overflow-hidden border-t border-white/[0.06] pt-20">
+    <footer className="relative overflow-hidden border-t border-ink/[0.08] pt-20">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_2fr]">
           <div>
             <Logo />
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/50">
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-ink/60">
               Siti web, e-commerce, CRM e web app su misura. Trasformiamo le imprese attraverso il digitale: design
               premium, tecnologia avanzata e supporto continuo.
             </p>
             <div className="mt-6 space-y-2 text-sm">
-              <a href={`mailto:${site.email}`} className="flex items-center gap-2 text-white/60 transition hover:text-bang">
+              <a href={`mailto:${site.email}`} className="flex items-center gap-2 text-ink/70 transition hover:text-bang-ink">
                 <Mail className="h-4 w-4" /> {site.email}
               </a>
-              <p className="flex items-center gap-2 text-white/60">
+              <p className="flex items-center gap-2 text-ink/70">
                 <MapPin className="h-4 w-4" /> {site.address}
               </p>
             </div>
@@ -80,7 +80,7 @@ export function Footer() {
                   key={s}
                   href={site.social[s]}
                   aria-label={s}
-                  className="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-white/60 transition hover:-translate-y-1 hover:border-bang hover:bg-bang hover:text-ink"
+                  className="grid h-10 w-10 place-items-center rounded-full border border-ink/10 text-ink/70 transition hover:-translate-y-1 hover:border-bang hover:bg-bang hover:text-ink"
                 >
                   <SocialIcon name={s} />
                 </a>
@@ -91,13 +91,13 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
             {COLUMNS.map((c) => (
               <div key={c.title}>
-                <h4 className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-white/35">{c.title}</h4>
+                <h4 className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-ink/50">{c.title}</h4>
                 <ul className="space-y-2.5">
                   {c.links.map(([label, href]) => (
                     <li key={label}>
                       <Link
                         href={href}
-                        className="group inline-flex items-center gap-2 text-sm text-white/65 transition hover:text-white"
+                        className="group inline-flex items-center gap-2 text-sm text-ink/70 transition hover:text-ink"
                       >
                         <span className="h-px w-0 bg-bang transition-all duration-300 group-hover:w-3" />
                         {label}
@@ -110,13 +110,13 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] py-6 text-xs text-white/35 sm:flex-row">
+        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-ink/[0.08] py-6 text-xs text-ink/50 sm:flex-row">
           <p>
             © {year} {site.name} — Tutti i diritti riservati
           </p>
-          <a href="#top" className="group flex items-center gap-2 transition hover:text-bang">
+          <a href="#top" className="group flex items-center gap-2 transition hover:text-bang-ink">
             Torna su
-            <span className="grid h-8 w-8 place-items-center rounded-full border border-white/10 transition group-hover:-translate-y-1 group-hover:border-bang">
+            <span className="grid h-8 w-8 place-items-center rounded-full border border-ink/10 transition group-hover:-translate-y-1 group-hover:border-bang">
               <ArrowUp className="h-3.5 w-3.5" />
             </span>
           </a>
@@ -130,9 +130,9 @@ export function Footer() {
           whileInView={{ y: "0%" }}
           viewport={{ once: true }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center font-display text-[23vw] font-extrabold leading-[0.8] tracking-[-0.06em] text-ink-3"
+          className="text-center font-display text-[23vw] font-extrabold leading-[0.8] tracking-[-0.06em] text-ink/[0.07]"
         >
-          web<span className="text-bang">bang</span>
+          web<span className="text-bang/45">bang</span>
         </motion.p>
       </div>
     </footer>

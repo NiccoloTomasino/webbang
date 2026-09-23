@@ -55,7 +55,7 @@ export function OfferLanding() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: EASE }}
-                className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] py-1.5 pl-1.5 pr-3.5 text-xs text-white/70 sm:text-sm"
+                className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-ink/10 bg-ink/[0.05] py-1.5 pl-1.5 pr-3.5 text-xs text-ink/75 sm:text-sm"
               >
                 <span className="shrink-0 rounded-full bg-bang px-2.5 py-1 text-xs font-bold text-ink">−{offer.discount}%</span>
                 <span className="truncate">Iniziativa Webbang · sconto in fattura</span>
@@ -65,10 +65,10 @@ export function OfferLanding() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
-                className="font-display text-[2.35rem] font-extrabold leading-[1] tracking-[-0.035em] text-white min-[400px]:text-[2.6rem] sm:text-6xl lg:text-[4.1rem]"
+                className="font-display text-[2.35rem] font-extrabold leading-[1] tracking-[-0.035em] text-ink min-[400px]:text-[2.6rem] sm:text-6xl lg:text-[4.1rem]"
               >
                 Il tuo progetto digitale con il{" "}
-                <span className="relative inline-block text-bang">
+                <span className="relative inline-block text-ink">
                   {offer.discount}% di sconto
                   <motion.svg aria-hidden viewBox="0 0 300 20" preserveAspectRatio="none" className="absolute -bottom-1.5 left-0 h-3 w-full">
                     <motion.path
@@ -90,10 +90,10 @@ export function OfferLanding() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3, ease: EASE }}
-                className="mt-6 text-base leading-relaxed text-white/60 sm:text-lg"
+                className="mt-6 text-base leading-relaxed text-ink/70 sm:text-lg"
               >
                 Siti web, e-commerce, CRM e web app su misura. Aderisci all&apos;iniziativa: se la tua pratica viene
-                approvata applichiamo subito uno <strong className="font-semibold text-white">sconto del {offer.discount}% direttamente in fattura</strong>.
+                approvata applichiamo subito uno <strong className="font-semibold text-ink">sconto del {offer.discount}% direttamente in fattura</strong>.
                 Tu paghi solo il {PAY}%.
               </motion.p>
 
@@ -101,7 +101,7 @@ export function OfferLanding() {
                 initial="hidden"
                 animate="show"
                 variants={{ show: { transition: { staggerChildren: 0.08, delayChildren: 0.45 } } }}
-                className="mt-6 grid gap-2.5 text-[15px] text-white/75"
+                className="mt-6 grid gap-2.5 text-[15px] text-ink/75"
               >
                 {["Richiesta gratuita e senza impegno", "Risposta entro 24 ore lavorative", "Sconto applicato subito, nessun rimborso da attendere"].map((t) => (
                   <motion.li
@@ -126,14 +126,14 @@ export function OfferLanding() {
               >
                 <a
                   href="#modulo"
-                  className="group flex items-center justify-center gap-2 rounded-full bg-bang px-7 py-4 text-base font-bold text-ink shadow-[0_15px_50px_-15px_rgba(255,214,10,0.7)] transition hover:bg-white"
+                  className="group flex items-center justify-center gap-2 rounded-full bg-bang px-7 py-4 text-base font-bold text-ink shadow-[0_15px_50px_-15px_rgba(255,214,10,0.7)] transition hover:bg-bang-deep"
                 >
                   Compila il modulo
                   <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
                 </a>
                 <a
                   href="#come-funziona"
-                  className="flex items-center justify-center rounded-full border border-white/15 px-7 py-4 text-base font-semibold text-white transition hover:border-bang hover:text-bang"
+                  className="flex items-center justify-center rounded-full border border-ink/12 px-7 py-4 text-base font-semibold text-ink transition hover:border-bang hover:text-bang-ink"
                 >
                   Come funziona
                 </a>
@@ -143,7 +143,7 @@ export function OfferLanding() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.9 }}
-                className="mt-5 text-center text-sm text-white/50 sm:text-left"
+                className="mt-5 text-center text-sm text-ink/60 sm:text-left"
               >
                 <CountdownInline prefix="Adesioni aperte ancora per" />
               </motion.p>
@@ -177,10 +177,10 @@ export function OfferLanding() {
           <div className="mx-auto grid max-w-6xl gap-8 px-4 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
             <div className="px-1 sm:px-0 lg:sticky lg:top-10 lg:self-start">
               <Eyebrow>Modulo di adesione</Eyebrow>
-              <h2 className="font-display text-[2rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-white sm:text-5xl">
-                Richiedi lo sconto in <span className="text-bang">2 minuti</span>.
+              <h2 className="font-display text-[2rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-ink sm:text-5xl">
+                Richiedi lo sconto in <span className="text-bang-ink">2 minuti</span>.
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-white/55">
+              <p className="mt-4 text-base leading-relaxed text-ink/65">
                 Raccontaci chi sei e cosa vorresti realizzare. Verifichiamo la pratica e ti ricontattiamo noi.
               </p>
 
@@ -191,27 +191,27 @@ export function OfferLanding() {
                   ["Preventivo con lo sconto applicato", `Se la pratica è approvata, in fattura paghi solo il ${PAY}%.`],
                 ].map(([t, d], i) => (
                   <li key={t} className="flex gap-4">
-                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-bang/40 font-mono text-xs text-bang">
+                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-bang/40 font-mono text-xs text-bang-ink">
                       {i + 1}
                     </span>
                     <span>
-                      <span className="block font-semibold text-white">{t}</span>
-                      <span className="block text-sm text-white/45">{d}</span>
+                      <span className="block font-semibold text-ink">{t}</span>
+                      <span className="block text-sm text-ink/55">{d}</span>
                     </span>
                   </li>
                 ))}
               </ol>
 
-              <div className="mt-7 hidden rounded-2xl border border-white/[0.07] bg-ink-2 p-4 text-sm text-white/55 lg:block">
+              <div className="mt-7 hidden rounded-2xl border border-ink/[0.08] bg-surface p-4 text-sm text-ink/65 lg:block">
                 Preferisci scriverci?{" "}
-                <a href={`mailto:${site.email}`} className="font-semibold text-bang hover:underline">
+                <a href={`mailto:${site.email}`} className="font-semibold text-bang-ink hover:underline">
                   {site.email}
                 </a>
               </div>
             </div>
 
             <Reveal y={40}>
-              <div className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-ink-2 shadow-[0_40px_120px_-30px_rgba(255,214,10,0.25)] sm:rounded-3xl">
+              <div className="overflow-hidden rounded-[1.75rem] border border-ink/10 bg-surface shadow-[0_40px_120px_-30px_rgba(255,214,10,0.25)] sm:rounded-3xl">
                 <DiscountForm />
               </div>
             </Reveal>
@@ -232,12 +232,12 @@ export function OfferLanding() {
                 { icon: LayoutDashboard, t: "Web app gestionale", d: "Processi, scadenze e controlli in un'unica piattaforma." },
               ].map((s, i) => (
                 <Reveal key={s.t} delay={i * 0.06}>
-                  <div className="h-full rounded-3xl border border-white/[0.07] bg-ink-2 p-4 sm:p-6">
+                  <div className="h-full rounded-3xl border border-ink/[0.08] bg-surface p-4 sm:p-6">
                     <span className="mb-4 grid h-11 w-11 place-items-center rounded-2xl bg-bang text-ink sm:mb-6 sm:h-12 sm:w-12">
                       <s.icon className="h-5 w-5" />
                     </span>
-                    <h3 className="font-display text-base font-bold leading-tight text-white sm:text-xl">{s.t}</h3>
-                    <p className="mt-1.5 text-xs leading-relaxed text-white/50 sm:mt-2 sm:text-sm">{s.d}</p>
+                    <h3 className="font-display text-base font-bold leading-tight text-ink sm:text-xl">{s.t}</h3>
+                    <p className="mt-1.5 text-xs leading-relaxed text-ink/60 sm:mt-2 sm:text-sm">{s.d}</p>
                   </div>
                 </Reveal>
               ))}
@@ -245,7 +245,7 @@ export function OfferLanding() {
 
             <div className="mt-3 grid gap-3 sm:mt-4 sm:gap-4 lg:grid-cols-3">
               <Reveal className="lg:row-span-1">
-                <Simulator className="h-full bg-ink-2" />
+                <Simulator className="h-full bg-surface" />
               </Reveal>
               <Reveal delay={0.08}>
                 <EligibilityCard className="h-full" />
@@ -291,7 +291,7 @@ export function OfferLanding() {
               </p>
               <a
                 href="#modulo"
-                className="group mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-8 py-4 text-base font-bold text-white transition hover:text-bang sm:w-auto"
+                className="group mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-paper px-8 py-4 text-base font-bold text-ink transition hover:text-bang-ink sm:w-auto"
               >
                 Compila il modulo
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -316,12 +316,12 @@ function LandingHeader() {
         <Logo />
       </Link>
       <div className="flex items-center gap-4">
-        <span className="hidden text-sm text-white/50 md:inline">
+        <span className="hidden text-sm text-ink/60 md:inline">
           <CountdownInline />
         </span>
         <a
           href={`mailto:${site.email}`}
-          className="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-white/70 transition hover:border-bang hover:text-bang sm:h-auto sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
+          className="grid h-10 w-10 place-items-center rounded-full border border-ink/10 text-ink/75 transition hover:border-bang hover:text-bang-ink sm:h-auto sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
           aria-label={`Scrivici a ${site.email}`}
         >
           <Mail className="h-4 w-4 sm:hidden" />
@@ -346,7 +346,7 @@ function SectionTitle({ eyebrow, title, center = false }: { eyebrow: string; tit
     <div className={cn("mb-7 sm:mb-10", center && "text-center")}>
       <Eyebrow>{eyebrow}</Eyebrow>
       <Reveal delay={0.05}>
-        <h2 className="font-display text-[2rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-white sm:text-5xl">
+        <h2 className="font-display text-[2rem] font-extrabold leading-[1.05] tracking-[-0.03em] text-ink sm:text-5xl">
           {title}
         </h2>
       </Reveal>
@@ -360,11 +360,11 @@ function PriceCard() {
     { label: "Sconto in fattura", value: `−${offer.discount}%`, accent: true },
   ];
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-bang/25 bg-gradient-to-b from-ink-3 to-ink-2 p-5 sm:p-7">
+    <div className="relative overflow-hidden rounded-3xl border border-bang/25 bg-gradient-to-b from-paper-2 to-paper p-5 sm:p-7">
       <div aria-hidden className="pointer-events-none absolute -right-4 -top-8 font-display text-[9rem] font-extrabold leading-none text-stroke-bang opacity-20 sm:text-[11rem]">
         %
       </div>
-      <p className="relative mb-4 font-mono text-[11px] uppercase tracking-[0.16em] text-white/45 sm:text-xs">Come si calcola</p>
+      <p className="relative mb-4 font-mono text-[11px] uppercase tracking-[0.16em] text-ink/55 sm:text-xs">Come si calcola</p>
       <div className="relative space-y-2.5">
         {rows.map((r, i) => (
           <motion.div
@@ -372,14 +372,14 @@ function PriceCard() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6 + i * 0.15, ease: EASE }}
-            className="flex items-center justify-between rounded-2xl border border-white/[0.07] bg-white/[0.03] px-4 py-3"
+            className="flex items-center justify-between rounded-2xl border border-ink/[0.08] bg-ink/[0.04] px-4 py-3"
           >
-            <span className="text-sm text-white/60">{r.label}</span>
+            <span className="text-sm text-ink/70">{r.label}</span>
             <span
               className={cn(
                 "font-display text-xl font-bold",
-                r.strike && "text-white/40 line-through decoration-bang decoration-2",
-                r.accent && "text-bang",
+                r.strike && "text-ink/55 line-through decoration-bang decoration-2",
+                r.accent && "text-bang-ink",
               )}
             >
               {r.value}
@@ -435,18 +435,18 @@ function Faq() {
         const isOpen = open === i;
         return (
           <Reveal key={f.q} delay={i * 0.04} y={16} blur={false}>
-            <div className={cn("rounded-2xl border bg-ink-2 transition-colors", isOpen ? "border-bang/30" : "border-white/[0.07]")}>
+            <div className={cn("rounded-2xl border bg-surface transition-colors", isOpen ? "border-bang/30" : "border-ink/[0.08]")}>
               <button
                 type="button"
                 onClick={() => setOpen(isOpen ? null : i)}
                 aria-expanded={isOpen}
                 className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5"
               >
-                <span className="text-[15px] font-semibold text-white sm:text-base">{f.q}</span>
+                <span className="text-[15px] font-semibold text-ink sm:text-base">{f.q}</span>
                 <span
                   className={cn(
                     "grid h-8 w-8 shrink-0 place-items-center rounded-full border transition-all duration-300",
-                    isOpen ? "rotate-45 border-bang bg-bang text-ink" : "border-white/15 text-white/60",
+                    isOpen ? "rotate-45 border-bang bg-bang text-ink" : "border-ink/12 text-ink/70",
                   )}
                 >
                   <Plus className="h-4 w-4" />
@@ -461,7 +461,7 @@ function Faq() {
                     transition={{ duration: 0.3, ease: EASE }}
                     className="overflow-hidden"
                   >
-                    <p className="px-5 pb-5 text-[15px] leading-relaxed text-white/55 sm:px-6">{f.a}</p>
+                    <p className="px-5 pb-5 text-[15px] leading-relaxed text-ink/65 sm:px-6">{f.a}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -475,19 +475,19 @@ function Faq() {
 
 function LandingFooter() {
   return (
-    <footer className="border-t border-white/[0.06] pb-[calc(6rem+env(safe-area-inset-bottom))] pt-8 sm:pb-10">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 text-sm text-white/40 sm:flex-row sm:px-8">
+    <footer className="border-t border-ink/[0.08] pb-[calc(6rem+env(safe-area-inset-bottom))] pt-8 sm:pb-10">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 text-sm text-ink/55 sm:flex-row sm:px-8">
         <Link href="/">
           <Logo className="scale-90" />
         </Link>
         <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-          <Link href="/" className="transition hover:text-bang">
+          <Link href="/" className="transition hover:text-bang-ink">
             Scopri Webbang
           </Link>
-          <Link href="/privacy" className="transition hover:text-bang">
+          <Link href="/privacy" className="transition hover:text-bang-ink">
             Privacy
           </Link>
-          <a href={`mailto:${site.email}`} className="transition hover:text-bang">
+          <a href={`mailto:${site.email}`} className="transition hover:text-bang-ink">
             {site.email}
           </a>
         </div>
@@ -508,9 +508,9 @@ function StickyBar({ show }: { show: boolean }) {
           transition={{ duration: 0.4, ease: EASE }}
           className="fixed inset-x-0 bottom-0 z-40 p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] lg:hidden"
         >
-          <div className="flex items-center justify-between gap-3 rounded-full border border-white/10 bg-ink/85 py-2 pl-5 pr-2 shadow-[0_-10px_40px_rgba(0,0,0,0.6)] backdrop-blur-xl">
-            <span className="min-w-0 text-xs text-white/60">
-              <span className="block font-semibold text-white">Sconto {offer.discount}% in fattura</span>
+          <div className="flex items-center justify-between gap-3 rounded-full border border-ink/10 bg-surface/85 py-2 pl-5 pr-2 shadow-[0_-10px_40px_-10px_rgba(11,11,13,0.25)] backdrop-blur-xl">
+            <span className="min-w-0 text-xs text-ink/70">
+              <span className="block font-semibold text-ink">Sconto {offer.discount}% in fattura</span>
               <CountdownInline className="text-[11px]" />
             </span>
             <a href="#modulo" className="shrink-0 rounded-full bg-bang px-5 py-3 text-sm font-bold text-ink">

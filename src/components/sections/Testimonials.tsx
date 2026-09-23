@@ -23,16 +23,16 @@ export function Testimonials() {
               as="h2"
               text={"Cosa dicono\ni nostri clienti."}
               highlight={["clienti."]}
-              className="font-display text-[2.1rem] font-extrabold leading-[1.02] tracking-[-0.03em] text-white min-[400px]:text-4xl sm:text-6xl"
+              className="font-display text-[2.1rem] font-extrabold leading-[1.02] tracking-[-0.03em] text-ink min-[400px]:text-4xl sm:text-6xl"
             />
           </div>
           <Reveal delay={0.2}>
-            <div className="flex items-center gap-4 rounded-3xl border border-white/[0.07] bg-ink-2 p-4 sm:gap-5 sm:p-5">
-              <p className="font-display text-5xl font-extrabold tracking-tight text-white sm:text-6xl">{rating}</p>
+            <div className="flex items-center gap-4 rounded-3xl border border-ink/[0.08] bg-surface p-4 sm:gap-5 sm:p-5">
+              <p className="font-display text-5xl font-extrabold tracking-tight text-ink sm:text-6xl">{rating}</p>
               <div>
                 <Stars rating={Math.round(averageRating)} />
-                <p className="mt-1.5 text-sm text-white/55">Media di {REVIEWS.length} recensioni dei clienti</p>
-                <p className="text-xs text-white/35">
+                <p className="mt-1.5 text-sm text-ink/65">Media di {REVIEWS.length} recensioni dei clienti</p>
+                <p className="text-xs text-ink/50">
                   {stats[0].value}
                   {stats[0].suffix} progetti completati
                 </p>
@@ -118,7 +118,7 @@ function MobileCarousel() {
             <span
               className={cn(
                 "block h-1.5 rounded-full transition-all duration-300",
-                i === active ? "w-6 bg-bang" : "w-1.5 bg-white/20",
+                i === active ? "w-6 bg-bang" : "w-1.5 bg-ink/14",
               )}
             />
           </button>

@@ -46,9 +46,9 @@ export function MobileOfferBar() {
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="fixed inset-x-0 bottom-0 z-40 p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] lg:hidden"
         >
-          <div className="mx-auto flex max-w-md items-center justify-between gap-3 rounded-full border border-white/10 bg-ink/85 py-2 pl-5 pr-2 shadow-[0_-10px_40px_rgba(0,0,0,0.6)] backdrop-blur-xl">
-            <span className="min-w-0 text-xs text-white/60">
-              <span className="block font-semibold text-white">Sconto {offer.discount}% in fattura</span>
+          <div className="mx-auto flex max-w-md items-center justify-between gap-3 rounded-full border border-ink/10 bg-surface/85 py-2 pl-5 pr-2 shadow-[0_-10px_40px_-10px_rgba(11,11,13,0.25)] backdrop-blur-xl">
+            <span className="min-w-0 text-xs text-ink/70">
+              <span className="block font-semibold text-ink">Sconto {offer.discount}% in fattura</span>
               <CountdownInline className="text-[11px]" />
             </span>
             <Link href={OFFER_PATH} className="shrink-0 rounded-full bg-bang px-5 py-3 text-sm font-bold text-ink">

@@ -52,7 +52,7 @@ const ERROR_MESSAGES: Record<ErrorKind, string> = {
 /* ---------- campi stilizzati ---------- */
 
 const fieldBase =
-  "w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-base text-white sm:text-sm placeholder-white/25 transition-all duration-200 focus:border-bang/60 focus:bg-white/[0.07] focus:outline-none focus:ring-2 focus:ring-bang/20";
+  "w-full rounded-xl border border-ink/12 bg-surface px-4 py-3 text-base text-ink sm:text-sm placeholder-ink/40 shadow-[inset_0_1px_2px_rgba(11,11,13,0.04)] transition-all duration-200 focus:border-bang-deep focus:outline-none focus:ring-2 focus:ring-bang/35";
 
 const Input = forwardRef<HTMLInputElement, ComponentProps<"input">>(({ className, ...p }, ref) => (
   <input ref={ref} className={cn(fieldBase, className)} {...p} />
@@ -65,7 +65,7 @@ const Select = forwardRef<HTMLSelectElement, ComponentProps<"select">>(
       <select ref={ref} className={cn(fieldBase, "cursor-pointer appearance-none pr-10", className)} {...p}>
         {children}
       </select>
-      <ChevronDown className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-white/40" />
+      <ChevronDown className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-ink/55" />
     </div>
   ),
 );
@@ -73,15 +73,15 @@ Select.displayName = "Select";
 
 function Label({ children, required, htmlFor }: { children: ReactNode; required?: boolean; htmlFor?: string }) {
   return (
-    <label htmlFor={htmlFor} className="mb-2 block text-sm font-semibold text-white/80">
+    <label htmlFor={htmlFor} className="mb-2 block text-sm font-semibold text-ink/75">
       {children}
-      {required && <span className="ml-1 text-bang">*</span>}
+      {required && <span className="ml-1 text-bang-ink">*</span>}
     </label>
   );
 }
 
 function Optional() {
-  return <span className="ml-1 font-normal text-white/30">(opzionale)</span>;
+  return <span className="ml-1 font-normal text-ink/45">(opzionale)</span>;
 }
 
 function FieldError({ message }: { message?: string }) {
@@ -92,7 +92,7 @@ function FieldError({ message }: { message?: string }) {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
-          className="mt-1.5 text-xs text-red-400"
+          className="mt-1.5 text-xs text-red-600"
           role="alert"
         >
           {message}
@@ -121,8 +121,8 @@ function Choice({
       className={cn(
         "rounded-xl border text-sm transition-all duration-200",
         selected
-          ? "border-bang/60 bg-bang/[0.12] text-white shadow-[inset_0_0_0_1px_rgba(255,214,10,0.25)]"
-          : "border-white/[0.08] bg-white/[0.03] text-white/60 hover:border-white/20 hover:text-white/85",
+          ? "border-bang/60 bg-bang/[0.12] text-ink shadow-[inset_0_0_0_1px_rgba(255,214,10,0.25)]"
+          : "border-ink/[0.09] bg-ink/[0.04] text-ink/70 hover:border-ink/16 hover:text-ink/75",
         className,
       )}
     >
@@ -233,17 +233,17 @@ export function DiscountForm() {
   return (
     <div ref={topRef} className="relative">
       {/* Header */}
-      <div className="border-b border-white/[0.08] px-5 pb-5 pt-6 sm:px-8 sm:pt-7">
+      <div className="border-b border-ink/[0.09] px-5 pb-5 pt-6 sm:px-8 sm:pt-7">
         <div className="mb-5 flex items-center gap-3 sm:mb-6">
           <BangMark className="h-10 w-10 shrink-0" />
           <div className="min-w-0">
-            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-bang sm:text-[11px]">
+            <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-bang-ink sm:text-[11px]">
               Iniziativa Webbang · −{offer.discount}%
             </p>
-            <h2 className="font-display text-xl font-bold leading-tight text-white sm:text-2xl">
+            <h2 className="font-display text-xl font-bold leading-tight text-ink sm:text-2xl">
               Richiedi lo Sconto in Fattura
             </h2>
-            <p className="mt-0.5 text-xs text-white/45">Bastano 2 minuti · risposta entro 24 ore</p>
+            <p className="mt-0.5 text-xs text-ink/55">Bastano 2 minuti · risposta entro 24 ore</p>
           </div>
         </div>
 
@@ -258,8 +258,8 @@ export function DiscountForm() {
                   <div key={s.id} className="flex items-center gap-2">
                     <motion.div
                       animate={{
-                        backgroundColor: done || active ? "#FFD60A" : "rgba(255,255,255,0.05)",
-                        color: done || active ? "#050505" : "rgba(255,255,255,0.4)",
+                        backgroundColor: done || active ? "#FFD60A" : "rgba(11,11,13,0.06)",
+                        color: done || active ? "#0b0b0d" : "rgba(11,11,13,0.45)",
                         scale: active ? 1.08 : 1,
                       }}
                       className="grid h-8 w-8 place-items-center rounded-full"
@@ -269,7 +269,7 @@ export function DiscountForm() {
                     <span
                       className={cn(
                         "hidden text-xs font-semibold sm:inline",
-                        active ? "text-white" : "text-white/40",
+                        active ? "text-ink" : "text-ink/55",
                       )}
                     >
                       {s.label}
@@ -278,10 +278,10 @@ export function DiscountForm() {
                 );
               })}
             </div>
-            <p className="mt-3 text-xs font-semibold text-white/70 sm:hidden">
-              Passo {step} di {STEPS.length} · <span className="text-bang">{STEPS[step - 1].label}</span>
+            <p className="mt-3 text-xs font-semibold text-ink/75 sm:hidden">
+              Passo {step} di {STEPS.length} · <span className="text-bang-ink">{STEPS[step - 1].label}</span>
             </p>
-            <div className="mt-3 h-1 overflow-hidden rounded-full bg-white/[0.06] sm:mt-4">
+            <div className="mt-3 h-1 overflow-hidden rounded-full bg-ink/[0.06] sm:mt-4">
               <motion.div
                 className="h-full rounded-full bg-gradient-to-r from-bang-deep to-bang"
                 animate={{ width: `${Math.max(progress, 6)}%` }}
@@ -298,18 +298,18 @@ export function DiscountForm() {
         {status === "error" && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="py-8 text-center">
             <div className="mx-auto mb-5 grid h-16 w-16 place-items-center rounded-full border border-red-500/30 bg-red-500/10">
-              <AlertTriangle className="h-8 w-8 text-red-400" />
+              <AlertTriangle className="h-8 w-8 text-red-600" />
             </div>
-            <h3 className="mb-2 font-display text-xl font-bold text-white">
+            <h3 className="mb-2 font-display text-xl font-bold text-ink">
               {errorKind === "incerto" ? "Invio non confermato" : "Errore nell'invio"}
             </h3>
-            <p className="mx-auto mb-6 max-w-md text-sm leading-relaxed text-white/55">
+            <p className="mx-auto mb-6 max-w-md text-sm leading-relaxed text-ink/65">
               {ERROR_MESSAGES[errorKind]}
             </p>
             <button
               type="button"
               onClick={() => setStatus("idle")}
-              className="rounded-full bg-bang px-6 py-3 text-sm font-semibold text-ink transition hover:bg-white"
+              className="rounded-full bg-bang px-6 py-3 text-sm font-semibold text-ink transition hover:bg-bang-deep"
             >
               Riprova
             </button>
@@ -416,7 +416,7 @@ export function DiscountForm() {
                     <>
                       <div>
                         <Label required>Tipo di progetto</Label>
-                        <p className="-mt-1 mb-3 text-xs text-white/35">Puoi selezionare più opzioni</p>
+                        <p className="-mt-1 mb-3 text-xs text-ink/50">Puoi selezionare più opzioni</p>
                         <Controller
                           name="projectTypes"
                           control={control}
@@ -438,7 +438,7 @@ export function DiscountForm() {
                                     <span
                                       className={cn(
                                         "grid h-4 w-4 shrink-0 place-items-center rounded-md border transition-all",
-                                        selected ? "border-bang bg-bang" : "border-white/20",
+                                        selected ? "border-bang bg-bang" : "border-ink/16",
                                       )}
                                     >
                                       {selected && <Check className="h-3 w-3 text-ink" strokeWidth={3.5} />}
@@ -555,21 +555,21 @@ export function DiscountForm() {
                         </Select>
                       </div>
 
-                      <div className="rounded-2xl border border-bang/20 bg-bang/[0.06] p-4 text-xs leading-relaxed text-white/60">
+                      <div className="rounded-2xl border border-bang/20 bg-bang/[0.06] p-4 text-xs leading-relaxed text-ink/70">
                         Inviando questo modulo richiedi di aderire all&apos;iniziativa Webbang. Se la pratica viene
-                        approvata, applicheremo uno <strong className="text-bang">sconto immediato del {offer.discount}% in fattura</strong>.
+                        approvata, applicheremo uno <strong className="text-bang-ink">sconto immediato del {offer.discount}% in fattura</strong>.
                         Nessun addebito e nessun impegno — ti contatteremo entro 24 ore.
                       </div>
 
                       <div>
-                        <label className="flex cursor-pointer items-start gap-3 text-sm text-white/60">
+                        <label className="flex cursor-pointer items-start gap-3 text-sm text-ink/70">
                           <input type="checkbox" className="peer sr-only" {...register("privacy")} />
-                          <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-md border border-white/20 transition peer-checked:border-bang peer-checked:bg-bang peer-focus-visible:ring-2 peer-focus-visible:ring-bang/50 [&>svg]:opacity-0 peer-checked:[&>svg]:opacity-100">
+                          <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-md border border-ink/16 transition peer-checked:border-bang peer-checked:bg-bang peer-focus-visible:ring-2 peer-focus-visible:ring-bang/50 [&>svg]:opacity-0 peer-checked:[&>svg]:opacity-100">
                             <Check className="h-3.5 w-3.5 text-ink" strokeWidth={3.5} />
                           </span>
                           <span>
                             Ho letto l&apos;
-                            <Link href="/privacy" target="_blank" className="text-bang underline-offset-2 hover:underline">
+                            <Link href="/privacy" target="_blank" className="text-bang-ink underline-offset-2 hover:underline">
                               informativa privacy
                             </Link>{" "}
                             e acconsento al trattamento dei dati per essere ricontattato.
@@ -589,7 +589,7 @@ export function DiscountForm() {
                 <button
                   type="button"
                   onClick={back}
-                  className="flex items-center gap-2 rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-white/70 transition hover:border-white/25 hover:text-white"
+                  className="flex items-center gap-2 rounded-full border border-ink/10 px-5 py-3 text-sm font-semibold text-ink/75 transition hover:border-ink/20 hover:text-ink"
                 >
                   <ArrowLeft className="h-4 w-4" /> Indietro
                 </button>
@@ -598,7 +598,7 @@ export function DiscountForm() {
                 <button
                   type="button"
                   onClick={next}
-                  className="group ml-auto flex items-center gap-2 rounded-full bg-bang px-6 py-3 text-sm font-semibold text-ink transition hover:bg-white"
+                  className="group ml-auto flex items-center gap-2 rounded-full bg-bang px-6 py-3 text-sm font-semibold text-ink transition hover:bg-bang-deep"
                 >
                   Avanti
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -607,7 +607,7 @@ export function DiscountForm() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="group ml-auto flex items-center gap-2 rounded-full bg-bang px-6 py-3 text-sm font-bold text-ink transition hover:bg-white disabled:cursor-wait disabled:opacity-70"
+                  className="group ml-auto flex items-center gap-2 rounded-full bg-bang px-6 py-3 text-sm font-bold text-ink transition hover:bg-bang-deep disabled:cursor-wait disabled:opacity-70"
                 >
                   {submitting ? (
                     <>
@@ -653,15 +653,15 @@ function SuccessState() {
           <Check className="h-11 w-11 text-ink" strokeWidth={3} />
         </motion.div>
       </div>
-      <h3 className="mb-3 font-display text-3xl font-extrabold text-white">Richiesta Inviata!</h3>
-      <p className="mx-auto mb-8 max-w-sm text-base leading-relaxed text-white/55">
+      <h3 className="mb-3 font-display text-3xl font-extrabold text-ink">Richiesta Inviata!</h3>
+      <p className="mx-auto mb-8 max-w-sm text-base leading-relaxed text-ink/65">
         Abbiamo ricevuto la tua richiesta. Un nostro consulente ti contatterà entro{" "}
-        <strong className="text-white">24 ore</strong> per verificare la pratica e l&apos;applicazione dello
+        <strong className="text-ink">24 ore</strong> per verificare la pratica e l&apos;applicazione dello
         sconto del {offer.discount}%.
       </p>
       <Link
         href="/"
-        className="inline-block rounded-full border border-white/15 bg-white/10 px-6 py-3 font-semibold text-white transition hover:bg-white/15"
+        className="inline-block rounded-full border border-ink/12 bg-ink/[0.07] px-6 py-3 font-semibold text-ink transition hover:bg-ink/12"
       >
         Scopri Webbang
       </Link>

@@ -12,9 +12,9 @@ import { cn } from "@/lib/utils";
 import { Eyebrow, Reveal, SplitReveal } from "@/components/ui/Reveal";
 
 const field =
-  "peer w-full rounded-2xl border border-white/10 bg-white/[0.03] px-4 pb-3 pt-6 text-white placeholder-transparent transition focus:border-bang/60 focus:bg-white/[0.05] focus:outline-none focus:ring-2 focus:ring-bang/20";
+  "peer w-full rounded-2xl border border-ink/12 bg-surface px-4 pb-3 pt-6 text-ink placeholder-transparent shadow-[inset_0_1px_2px_rgba(11,11,13,0.04)] transition focus:border-bang-deep focus:outline-none focus:ring-2 focus:ring-bang/35";
 const floating =
-  "pointer-events-none absolute left-4 top-2 text-[11px] font-medium text-white/40 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-[11px] peer-focus:text-bang";
+  "pointer-events-none absolute left-4 top-2 text-[11px] font-medium text-ink/55 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-[11px] peer-focus:text-bang-ink";
 
 export function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -54,10 +54,10 @@ export function Contact() {
               as="h2"
               text={"Parliamo del\ntuo progetto."}
               highlight={["progetto."]}
-              className="font-display text-[2.1rem] font-extrabold leading-[1.04] tracking-[-0.03em] text-white min-[400px]:text-4xl sm:text-6xl"
+              className="font-display text-[2.1rem] font-extrabold leading-[1.04] tracking-[-0.03em] text-ink min-[400px]:text-4xl sm:text-6xl"
             />
             <Reveal delay={0.2}>
-              <p className="mt-5 max-w-md text-base leading-relaxed text-white/55 sm:mt-6 sm:text-lg">
+              <p className="mt-5 max-w-md text-base leading-relaxed text-ink/65 sm:mt-6 sm:text-lg">
                 Hai un&apos;idea, un processo da semplificare o vuoi saperne di più? Scrivici — ti risponderemo entro un
                 giorno lavorativo.
               </p>
@@ -66,47 +66,47 @@ export function Contact() {
             <Reveal delay={0.25} className="mt-8 space-y-3 sm:mt-10">
               <a
                 href={`mailto:${site.email}`}
-                className="group flex items-center gap-4 rounded-2xl border border-white/[0.07] bg-ink-2 p-4 transition hover:border-bang/40"
+                className="group flex items-center gap-4 rounded-2xl border border-ink/[0.08] bg-surface p-4 transition hover:border-bang/40"
               >
                 <span className="grid h-12 w-12 place-items-center rounded-xl bg-bang text-ink transition group-hover:rotate-[-8deg]">
                   <Mail className="h-5 w-5" />
                 </span>
                 <span>
-                  <span className="block text-xs text-white/40">Email</span>
-                  <span className="block font-semibold text-white">{site.email}</span>
+                  <span className="block text-xs text-ink/55">Email</span>
+                  <span className="block font-semibold text-ink">{site.email}</span>
                 </span>
               </a>
               <a
                 href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-4 rounded-2xl border border-white/[0.07] bg-ink-2 p-4 transition hover:border-bang/40"
+                className="group flex items-center gap-4 rounded-2xl border border-ink/[0.08] bg-surface p-4 transition hover:border-bang/40"
               >
-                <span className="grid h-12 w-12 place-items-center rounded-xl border border-white/10 text-bang transition group-hover:rotate-[-8deg]">
+                <span className="grid h-12 w-12 place-items-center rounded-xl border border-ink/10 text-bang-ink transition group-hover:rotate-[-8deg]">
                   <MapPin className="h-5 w-5" />
                 </span>
                 <span>
-                  <span className="block text-xs text-white/40">Sede</span>
-                  <span className="block font-semibold text-white">{site.address}</span>
+                  <span className="block text-xs text-ink/55">Sede</span>
+                  <span className="block font-semibold text-ink">{site.address}</span>
                 </span>
               </a>
             </Reveal>
 
             <Reveal delay={0.3}>
-              <ul className="mt-8 space-y-3 text-sm text-white/60">
+              <ul className="mt-8 space-y-3 text-sm text-ink/70">
                 {[
                   { i: Clock, t: "Risposta garantita entro 24 ore lavorative" },
                   { i: Sparkles, t: "Consulenza iniziale gratuita e senza impegno" },
                   { i: FileText, t: "Preventivo dettagliato in 48 ore" },
                 ].map(({ i: Icon, t }) => (
                   <li key={t} className="flex items-center gap-3">
-                    <Icon className="h-4 w-4 text-bang" /> {t}
+                    <Icon className="h-4 w-4 text-bang-ink" /> {t}
                   </li>
                 ))}
               </ul>
             </Reveal>
 
-            <Reveal delay={0.35} className="mt-8 overflow-hidden rounded-2xl border border-white/[0.07] bg-ink-2">
+            <Reveal delay={0.35} className="mt-8 overflow-hidden rounded-2xl border border-ink/[0.08] bg-surface">
               {showMap ? (
                 <iframe
                   title={`Webbang — ${site.address}`}
@@ -117,15 +117,15 @@ export function Contact() {
                 />
               ) : (
                 <div className="flex flex-col items-start gap-3 p-5">
-                  <p className="text-sm font-semibold text-white">Come raggiungerci</p>
+                  <p className="text-sm font-semibold text-ink">Come raggiungerci</p>
                   <button
                     type="button"
                     onClick={() => setShowMap(true)}
-                    className="rounded-full border border-white/15 px-4 py-2 text-sm text-white transition hover:border-bang hover:text-bang"
+                    className="rounded-full border border-ink/12 px-4 py-2 text-sm text-ink transition hover:border-bang hover:text-bang-ink"
                   >
                     Mostra la mappa
                   </button>
-                  <p className="text-xs text-white/35">
+                  <p className="text-xs text-ink/50">
                     La mappa è fornita da Google. Si carica solo se la richiedi tu, così nessun dato viene inviato a
                     Google senza il tuo consenso.
                   </p>
@@ -135,7 +135,7 @@ export function Contact() {
           </div>
 
           <Reveal delay={0.15}>
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/[0.08] bg-ink-2 p-6 sm:p-10">
+            <div className="relative overflow-hidden rounded-[2rem] border border-ink/[0.09] bg-surface p-6 sm:p-10">
               <div aria-hidden className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-bang/10 blur-3xl" />
               <AnimatePresence mode="wait">
                 {status === "success" ? (
@@ -153,14 +153,14 @@ export function Contact() {
                     >
                       <CheckCircle2 className="h-10 w-10 text-ink" />
                     </motion.span>
-                    <h3 className="font-display text-3xl font-bold text-white">Messaggio inviato!</h3>
-                    <p className="mt-3 max-w-xs text-white/55">
+                    <h3 className="font-display text-3xl font-bold text-ink">Messaggio inviato!</h3>
+                    <p className="mt-3 max-w-xs text-ink/65">
                       Grazie per averci scritto. Ti risponderemo entro un giorno lavorativo.
                     </p>
                     <button
                       type="button"
                       onClick={() => setStatus("idle")}
-                      className="mt-8 rounded-full border border-white/15 px-5 py-2.5 text-sm text-white transition hover:border-bang hover:text-bang"
+                      className="mt-8 rounded-full border border-ink/12 px-5 py-2.5 text-sm text-ink transition hover:border-bang hover:text-bang-ink"
                     >
                       Invia un altro messaggio
                     </button>
@@ -175,7 +175,7 @@ export function Contact() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                   >
-                    <h3 className="mb-2 font-display text-2xl font-bold text-white">Scrivici un messaggio</h3>
+                    <h3 className="mb-2 font-display text-2xl font-bold text-ink">Scrivici un messaggio</h3>
                     <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden>
                       <input tabIndex={-1} autoComplete="off" {...register("aziendaRiferimento")} />
                     </div>
@@ -185,14 +185,14 @@ export function Contact() {
                         <input id="c-name" placeholder="Nome e Cognome" autoComplete="name" className={field} {...register("name")} />
                         <label htmlFor="c-name" className={floating}>Nome e Cognome</label>
                       </div>
-                      {errors.name && <p className="mt-1.5 text-xs text-red-400">{errors.name.message}</p>}
+                      {errors.name && <p className="mt-1.5 text-xs text-red-600">{errors.name.message}</p>}
                     </div>
                     <div>
                       <div className="relative">
                         <input id="c-email" type="email" placeholder="Email" autoComplete="email" className={field} {...register("email")} />
                         <label htmlFor="c-email" className={floating}>Email</label>
                       </div>
-                      {errors.email && <p className="mt-1.5 text-xs text-red-400">{errors.email.message}</p>}
+                      {errors.email && <p className="mt-1.5 text-xs text-red-600">{errors.email.message}</p>}
                     </div>
                     <div>
                       <div className="relative">
@@ -205,11 +205,11 @@ export function Contact() {
                         />
                         <label htmlFor="c-message" className={floating}>Raccontaci del tuo progetto o fai una domanda…</label>
                       </div>
-                      {errors.message && <p className="mt-1.5 text-xs text-red-400">{errors.message.message}</p>}
+                      {errors.message && <p className="mt-1.5 text-xs text-red-600">{errors.message.message}</p>}
                     </div>
 
                     {status === "error" && (
-                      <p className="rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-300" role="alert">
+                      <p className="rounded-xl border border-red-500/30 bg-red-50 p-3 text-sm text-red-700" role="alert">
                         Si è verificato un errore. Riprova o scrivici direttamente a {site.email}.
                       </p>
                     )}
@@ -217,7 +217,7 @@ export function Contact() {
                     <button
                       type="submit"
                       disabled={status === "sending"}
-                      className="group flex w-full items-center justify-center gap-2 rounded-full bg-bang py-4 font-semibold text-ink transition hover:bg-white disabled:opacity-70"
+                      className="group flex w-full items-center justify-center gap-2 rounded-full bg-bang py-4 font-semibold text-ink transition hover:bg-bang-deep disabled:opacity-70"
                     >
                       {status === "sending" ? (
                         <>
@@ -230,9 +230,9 @@ export function Contact() {
                         </>
                       )}
                     </button>
-                    <p className="text-center text-xs text-white/35">
+                    <p className="text-center text-xs text-ink/50">
                       I dati che inserisci ci servono solo per risponderti. Leggi l&apos;
-                      <Link href="/privacy" className="text-bang hover:underline">
+                      <Link href="/privacy" className="text-bang-ink hover:underline">
                         informativa privacy
                       </Link>
                       .

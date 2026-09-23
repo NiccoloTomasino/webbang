@@ -63,7 +63,7 @@ export function SplitReveal({
               <span key={i}>
                 <span className="inline-block overflow-hidden pb-[0.12em] -mb-[0.12em] align-bottom">
                   <motion.span
-                    className={cn("inline-block will-change-transform", isHighlight && "text-bang", wordClassName)}
+                    className={cn("inline-block will-change-transform", isHighlight && "mark-bang [--mark-offset:0.14em] text-ink", wordClassName)}
                     variants={{ hidden: { y: "110%", rotate: 4 }, show: { y: "0%", rotate: 0 } }}
                     transition={{ duration: 0.9, delay: delay + i * 0.05, ease: EASE }}
                   >
@@ -82,7 +82,7 @@ export function SplitReveal({
 export function Eyebrow({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
     <Reveal y={16} blur={false} className={cn("mb-5 inline-flex", className)}>
-      <span className="inline-flex items-center gap-2 rounded-full border border-bang/25 bg-bang/[0.07] px-3.5 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-bang">
+      <span className="inline-flex items-center gap-2 rounded-full border border-bang/25 bg-bang/[0.07] px-3.5 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-bang-ink">
         <span className="relative flex h-1.5 w-1.5">
           <span className="absolute inset-0 animate-pulse-ring rounded-full bg-bang" />
           <span className="relative h-1.5 w-1.5 rounded-full bg-bang" />

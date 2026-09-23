@@ -31,16 +31,16 @@ export function Simulator({ className }: { className?: string }) {
   const pct = ((price - MIN) / (MAX - MIN)) * 100;
 
   return (
-    <div ref={ref} className={cn("rounded-3xl border border-white/10 bg-ink/70 p-5 backdrop-blur sm:p-7", className)}>
+    <div ref={ref} className={cn("rounded-3xl border border-ink/10 bg-surface/70 p-5 backdrop-blur sm:p-7", className)}>
       <div className="mb-4 flex items-center justify-between gap-3">
-        <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-white/45 sm:text-xs">Simula il tuo risparmio</p>
+        <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-ink/55 sm:text-xs">Simula il tuo risparmio</p>
         <span className="shrink-0 rounded-full bg-bang px-2.5 py-1 text-[11px] font-bold text-ink">−{offer.discount}%</span>
       </div>
 
-      <label htmlFor="sim-price" className="text-sm text-white/55">
+      <label htmlFor="sim-price" className="text-sm text-ink/65">
         Valore del progetto
       </label>
-      <p className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl" aria-live="polite">
+      <p className="font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl" aria-live="polite">
         {formatEuro(price)}
       </p>
 
@@ -52,17 +52,17 @@ export function Simulator({ className }: { className?: string }) {
         step={500}
         value={price}
         onChange={(e) => setPrice(Number(e.target.value))}
-        className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full bg-white/10 accent-bang [&::-webkit-slider-thumb]:h-7 [&::-webkit-slider-thumb]:w-7 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border-4 [&::-webkit-slider-thumb]:border-ink [&::-webkit-slider-thumb]:bg-bang [&::-webkit-slider-thumb]:shadow-[0_0_0_2px_#FFD60A] sm:[&::-webkit-slider-thumb]:h-6 sm:[&::-webkit-slider-thumb]:w-6"
-        style={{ background: `linear-gradient(to right, #FFD60A ${pct}%, rgba(255,255,255,0.1) ${pct}%)` }}
+        className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full bg-ink/[0.07] accent-bang [&::-webkit-slider-thumb]:h-7 [&::-webkit-slider-thumb]:w-7 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border-4 [&::-webkit-slider-thumb]:border-ink [&::-webkit-slider-thumb]:bg-bang [&::-webkit-slider-thumb]:shadow-[0_0_0_2px_#FFD60A] sm:[&::-webkit-slider-thumb]:h-6 sm:[&::-webkit-slider-thumb]:w-6"
+        style={{ background: `linear-gradient(to right, #FFD60A ${pct}%, rgba(11,11,13,0.12) ${pct}%)` }}
       />
-      <div className="mt-2 flex justify-between font-mono text-[10px] text-white/30">
+      <div className="mt-2 flex justify-between font-mono text-[10px] text-ink/45">
         <span>{formatEuro(MIN)}</span>
         <span>{formatEuro(MAX)}+</span>
       </div>
 
       <div className="mt-5 flex h-12 overflow-hidden rounded-2xl text-xs font-bold sm:h-14 sm:text-sm">
         <motion.div
-          className="flex items-center justify-center whitespace-nowrap bg-white text-ink"
+          className="flex items-center justify-center whitespace-nowrap bg-ink text-paper"
           initial={{ width: "50%" }}
           animate={{ width: inView ? `${PAY}%` : "50%" }}
           transition={{ duration: 1.2, ease: EASE }}
@@ -76,20 +76,20 @@ export function Simulator({ className }: { className?: string }) {
       </div>
 
       <div className="mt-4 grid grid-cols-2 gap-2.5 sm:gap-3">
-        <div className="min-w-0 rounded-2xl border border-white/[0.08] bg-white/[0.03] p-3.5 sm:p-4">
-          <p className="text-xs text-white/45">Paghi solo</p>
-          <motion.p className="font-display text-xl font-extrabold tabular-nums text-white min-[400px]:text-2xl sm:text-3xl">
+        <div className="min-w-0 rounded-2xl border border-ink/[0.09] bg-ink/[0.04] p-3.5 sm:p-4">
+          <p className="text-xs text-ink/55">Paghi solo</p>
+          <motion.p className="font-display text-xl font-extrabold tabular-nums text-ink min-[400px]:text-2xl sm:text-3xl">
             {payText}
           </motion.p>
         </div>
         <div className="min-w-0 rounded-2xl border border-bang/30 bg-bang/10 p-3.5 sm:p-4">
-          <p className="text-xs text-bang/80">Risparmi</p>
-          <motion.p className="font-display text-xl font-extrabold tabular-nums text-bang min-[400px]:text-2xl sm:text-3xl">
+          <p className="text-xs text-bang-ink/80">Risparmi</p>
+          <motion.p className="font-display text-xl font-extrabold tabular-nums text-bang-ink min-[400px]:text-2xl sm:text-3xl">
             {saveText}
           </motion.p>
         </div>
       </div>
-      <p className="mt-3 text-[11px] leading-relaxed text-white/30">
+      <p className="mt-3 text-[11px] leading-relaxed text-ink/45">
         Esempio indicativo. Lo sconto viene applicato in fattura solo a seguito dell&apos;approvazione della pratica.
       </p>
     </div>

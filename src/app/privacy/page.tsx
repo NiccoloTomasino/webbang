@@ -20,12 +20,12 @@ export default function PrivacyPage() {
         <Link href="/" aria-label="Torna alla home">
           <Logo />
         </Link>
-        <Link href="/" className="flex items-center gap-2 text-sm text-white/55 transition hover:text-bang">
+        <Link href="/" className="flex items-center gap-2 text-sm text-ink/65 transition hover:text-bang-ink">
           <ArrowLeft className="h-4 w-4" /> Torna al sito
         </Link>
       </div>
 
-      <article className="space-y-6 leading-relaxed text-white/65 [&_h1]:font-display [&_h1]:text-4xl [&_h1]:font-extrabold [&_h1]:text-white [&_h2]:mt-10 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-white">
+      <article className="space-y-6 leading-relaxed text-ink/70 [&_h1]:font-display [&_h1]:text-4xl [&_h1]:font-extrabold [&_h1]:text-ink [&_h2]:mt-10 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-ink">
         <h1>Informativa Privacy</h1>
         <p>
           Ai sensi del Regolamento UE 2016/679 (GDPR), {site.name} informa che i dati personali forniti tramite i moduli

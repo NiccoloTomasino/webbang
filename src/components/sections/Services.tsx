@@ -155,12 +155,12 @@ export function Services() {
               as="h2"
               text={"Tutto ciò di cui la tua\nazienda ha bisogno."}
               highlight={["azienda"]}
-              className="font-display text-[2.1rem] font-extrabold leading-[1.04] tracking-[-0.03em] text-white min-[400px]:text-4xl sm:text-6xl"
+              className="font-display text-[2.1rem] font-extrabold leading-[1.04] tracking-[-0.03em] text-ink min-[400px]:text-4xl sm:text-6xl"
             />
           </div>
           <Reveal delay={0.2}>
-            <p className="max-w-lg text-base leading-relaxed text-white/55 sm:text-lg lg:ml-auto">
-              Non solo siti web. Siamo un&apos;<span className="text-white">agenzia digitale e di marketing</span>: costruiamo
+            <p className="max-w-lg text-base leading-relaxed text-ink/65 sm:text-lg lg:ml-auto">
+              Non solo siti web. Siamo un&apos;<span className="text-ink">agenzia digitale e di marketing</span>: costruiamo
               gli strumenti che fanno girare la tua azienda e portiamo i clienti che la fanno crescere.
             </p>
           </Reveal>
@@ -170,15 +170,15 @@ export function Services() {
           {GROUPS.map((g, gi) => (
             <div key={g.id} id={g.id} className="scroll-mt-28">
               <Reveal>
-                <div className="mb-5 flex flex-col gap-2 border-t border-white/[0.08] pt-6 sm:mb-7 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
+                <div className="mb-5 flex flex-col gap-2 border-t border-ink/[0.09] pt-6 sm:mb-7 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
                   <div className="flex items-baseline gap-4">
-                    <span className="font-mono text-sm text-bang">0{gi + 1}</span>
+                    <span className="font-mono text-sm text-bang-ink">0{gi + 1}</span>
                     <div>
-                      <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/40">{g.label}</p>
-                      <h3 className="mt-1 font-display text-2xl font-bold tracking-tight text-white sm:text-3xl">{g.title}</h3>
+                      <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink/55">{g.label}</p>
+                      <h3 className="mt-1 font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">{g.title}</h3>
                     </div>
                   </div>
-                  <p className="max-w-sm pl-9 text-sm leading-relaxed text-white/45 sm:pl-0 sm:text-right">{g.text}</p>
+                  <p className="max-w-sm pl-9 text-sm leading-relaxed text-ink/55 sm:pl-0 sm:text-right">{g.text}</p>
                 </div>
               </Reveal>
 
@@ -208,24 +208,24 @@ function ServiceBody({ service: s, index }: { service: Service; index: number })
         <span
           className={cn(
             "grid place-items-center rounded-2xl transition-all duration-500 group-hover:rotate-[-8deg] group-hover:scale-110",
-            s.featured ? "h-12 w-12 bg-bang text-ink sm:h-14 sm:w-14" : "h-11 w-11 border border-white/10 bg-white/[0.04] text-bang sm:h-12 sm:w-12",
+            s.featured ? "h-12 w-12 bg-bang text-ink sm:h-14 sm:w-14" : "h-11 w-11 border border-ink/10 bg-ink/[0.05] text-bang-ink sm:h-12 sm:w-12",
           )}
         >
           <Icon className={s.featured ? "h-6 w-6" : "h-5 w-5"} />
         </span>
-        <span className="font-mono text-xs text-white/25">0{index + 1}</span>
+        <span className="font-mono text-xs text-ink/40">0{index + 1}</span>
       </div>
 
       {s.featured && (
-        <span className="mb-3 inline-flex w-fit rounded-full border border-bang/30 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-widest text-bang">
+        <span className="mb-3 inline-flex w-fit rounded-full border border-bang/30 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-widest text-bang-ink">
           Specialità Webbang
         </span>
       )}
 
-      <h3 className={cn("font-display font-bold tracking-tight text-white", big ? "text-[1.75rem] sm:text-4xl" : "text-xl sm:text-2xl")}>
+      <h3 className={cn("font-display font-bold tracking-tight text-ink", big ? "text-[1.75rem] sm:text-4xl" : "text-xl sm:text-2xl")}>
         {s.title}
       </h3>
-      <p className={cn("mt-2.5 leading-relaxed text-white/50 sm:mt-3", big ? "text-[15px] sm:text-lg" : "text-sm")}>{s.text}</p>
+      <p className={cn("mt-2.5 leading-relaxed text-ink/60 sm:mt-3", big ? "text-[15px] sm:text-lg" : "text-sm")}>{s.text}</p>
 
       {s.visual === "pipeline" && <MiniPipeline />}
       {s.visual === "funnel" && <MiniFunnel />}
@@ -233,7 +233,7 @@ function ServiceBody({ service: s, index }: { service: Service; index: number })
       <div className="mt-auto flex items-end justify-between gap-3 pt-5 sm:pt-6">
         <div className="flex flex-wrap gap-1.5">
           {s.tags.map((t) => (
-            <span key={t} className="rounded-full bg-white/[0.05] px-2.5 py-1 text-[11px] text-white/50">
+            <span key={t} className="rounded-full bg-ink/[0.05] px-2.5 py-1 text-[11px] text-ink/60">
               {t}
             </span>
           ))}
@@ -241,7 +241,7 @@ function ServiceBody({ service: s, index }: { service: Service; index: number })
         <a
           href="#contatti"
           aria-label={`Parliamo di ${s.title}`}
-          className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/10 text-white/60 transition-all duration-300 group-hover:border-bang group-hover:bg-bang group-hover:text-ink"
+          className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-ink/10 text-ink/70 transition-all duration-300 group-hover:border-bang group-hover:bg-bang group-hover:text-ink"
         >
           <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:rotate-45" />
         </a>
@@ -259,8 +259,8 @@ function MiniPipeline() {
   return (
     <div className="mt-6 grid grid-cols-3 gap-1.5 sm:mt-7 sm:gap-2.5">
       {cols.map((c, ci) => (
-        <div key={c.name} className="min-w-0 rounded-xl border border-white/[0.06] bg-ink/60 p-1.5 sm:p-2.5">
-          <p className="mb-2 truncate px-0.5 font-mono text-[9px] uppercase tracking-wider text-white/35 sm:text-[10px]">{c.name}</p>
+        <div key={c.name} className="min-w-0 rounded-xl border border-ink/[0.08] bg-surface/60 p-1.5 sm:p-2.5">
+          <p className="mb-2 truncate px-0.5 font-mono text-[9px] uppercase tracking-wider text-ink/50 sm:text-[10px]">{c.name}</p>
           <div className="space-y-1.5">
             {c.cards.map((card, i) => (
               <motion.div
@@ -271,7 +271,7 @@ function MiniPipeline() {
                 transition={{ delay: 0.3 + ci * 0.15 + i * 0.1 }}
                 className={cn(
                   "rounded-lg px-1.5 py-1.5 text-[10px] leading-tight sm:px-2 sm:text-[11px]",
-                  ci === 2 ? "bg-bang font-semibold text-ink" : "bg-white/[0.06] text-white/70",
+                  ci === 2 ? "bg-bang font-semibold text-ink" : "bg-ink/[0.06] text-ink/75",
                 )}
               >
                 {card}
@@ -301,7 +301,7 @@ function MiniFunnel() {
             transition={{ delay: 0.3 + i * 0.18, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className={cn(
               "flex items-center justify-between gap-2 overflow-hidden whitespace-nowrap rounded-xl px-3 py-2 sm:py-2.5",
-              i === 2 ? "bg-bang text-ink" : "border border-white/[0.06] bg-ink/60 text-white/70",
+              i === 2 ? "bg-bang text-ink" : "border border-ink/[0.08] bg-surface/60 text-ink/75",
             )}
           >
             <span className="font-mono text-[9px] uppercase tracking-wider opacity-70 sm:text-[10px]">{st.name}</span>

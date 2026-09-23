@@ -13,12 +13,12 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary: "bg-bang text-ink shadow-[0_0_0_0_rgba(255,214,10,0.5)] hover:shadow-[0_10px_40px_-8px_rgba(255,214,10,0.55)]",
-  ghost: "border border-white/15 text-white hover:border-bang/60",
-  dark: "bg-ink text-white hover:text-ink",
+  ghost: "border border-ink/15 text-ink hover:border-ink/30",
+  dark: "bg-ink text-paper hover:text-ink",
 };
 
 const fill: Record<Variant, string> = {
-  primary: "bg-white",
+  primary: "bg-ink",
   ghost: "bg-bang",
   dark: "bg-bang",
 };
@@ -37,6 +37,7 @@ function Inner({ children, variant, icon }: { children: ReactNode; variant: Vari
       <span
         className={cn(
           "relative z-10 flex items-center gap-2 transition-colors duration-300",
+          variant === "primary" && "group-hover:text-paper",
           variant === "ghost" && "group-hover:text-ink",
           variant === "dark" && "group-hover:text-ink",
         )}
